@@ -1,0 +1,26 @@
+<%   @post = Post.find(params[:id]) %>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area :body  ,style: 'width: 80%; '  %>
+  <%= f.label :catagory, style: 'color:white'%>
+
+  <%= f.collection_select(:category_id, Category.all, :id, :name, :include_blank => "Please select",   ) %>
+    <%= f.file_field :document ,style: 'color:white;margin-left:57%; margin-top:-3.3%; '%>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

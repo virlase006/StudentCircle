@@ -1,0 +1,18 @@
+<div id ="post_form_style">
+<%= form_for(Post.new ,:html => { :style => " width:100%;" }) do |f| %>
+  
+  <div class="field" style="width: 90% ; padding-top: -2%;"  >
+<h3 style="color:#fff">News Feeds</h3>
+    <%= f.text_area :body , placeholder: "Compose new micropost..." ,style: 'width: 80%; '  %>
+
+    <%= f.submit "Post" , style: 'background-color:#660033; color:white; margin-left:.5%; position:absolute; margin-top:3.2%;'  %></br>
+ <%= f.label :catagory, style: 'color:white'%>
+
+  <%= f.collection_select(:category_id, Category.all, :id, :name, :include_blank => "Please select" ) %>
+     
+    <%= f.file_field :document ,style: 'color:white;margin-left:57%; margin-top:-3.3%; '%>
+
+
+   </div>
+<% end %>
+</div>

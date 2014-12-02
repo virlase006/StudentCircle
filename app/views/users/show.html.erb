@@ -1,0 +1,39 @@
+<div class="profile" summary="Profile information" style="">
+  <div style="width:30%; float: left;padding-top: 05%; padding-left: 3%;">
+    <div class="main" style="width: 50%;" >
+      <div style="margin-bottom: 35px;
+max-height: 180px;
+max-width: 180px; ">
+     <%= image_tag @user.avatar.url,:style=>"border-radius:50%; width:230px; height:230px;position: relative;
+z-index: 1;border-radius:50%; width:100px; height:100px"%>
+        <br>
+        <div style="position: absolute;
+z-index: 2;
+bottom: 0;
+left: 0;
+width: 100%;
+min-height: 40px;
+;">
+     hellp<%= @user.firstName %>
+          </div>
+    </div>
+      <%= render 'follow_form' if signed_in? %>
+      .
+      .
+      .
+   
+    <div class="sidebar rounds" style="margin-left:3%;"  >
+      <strong>Name</strong><b style="color:#660033"> <%= @user.firstName %></b><br />
+      <hr/>
+      <strong>URL</strong><b style="color:#660033"> <%= link_to user_path(@user), @user %></b><hr/>
+      
+      <strong>posts</strong> <%= @user.posts.count %><hr/>
+      <b style="color:#660033">  <%= render 'shared/stats' %></b>
+    </div>
+    </div></div>
+  <div>
+    <div style="float:left; width: 70%;padding-top: 05%;">
+     <b style="color:#660033"> <%= render :partial=> "userPosts" %></b>
+
+  </div>
+</div>

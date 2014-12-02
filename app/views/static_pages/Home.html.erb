@@ -1,0 +1,66 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+
+<script type="text/javascript">
+
+ 
+  $(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+
+</script>
+
+
+<style>
+
+</style>
+
+<div class="midBody" >
+
+
+  <% if user_signed_in? %>
+    <div style="background-color: #999999;">
+      <%= render :partial=>"timeLine" %>
+    </div>
+  <% else %>
+ 
+
+    <div style="width:100%;">
+      <div style="width:100%; background-color:transparent; padding:1%;">
+
+        
+      
+        <button type="button" id="flip" class="btn btn-primary" data-toggle="button" style="background-color:#660033; width:8%;margin-top: -1%;">Login</button>
+        <b>  <p style="float:right; color:#eeeeee;">Already Registered?</p> </b><br/>
+
+</div>
+       
+        <div id="panel">
+ 
+                      <%= render :partial=>"devise/signIn" %>
+               
+           
+        
+        </div>
+          </div>
+   <div style="width:100;">
+      <h1 style="color: buttonface; margin-top: -3%;">Student's Circle</h1>
+      </div>
+   <div style="width:100%;">
+    
+
+      <div style=" width:40%;margin-left: 30%;">
+  <%= render :partial=>"devise/signUp"  %></div>
+   </div>
+
+
+  <% end %>
+
+</div>

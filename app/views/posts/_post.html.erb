@@ -1,0 +1,56 @@
+
+<div id="post_style" style="">
+  <div style="float:left ; width:20%;">
+
+<%   @user= User.find_by_id(post.user_id) %>
+ <%= image_tag @user.avatar.url, :style=>"border-radius:50%; width:50px; height:50px" %>
+    <br/>
+    <b style="color:#660033; margin-left: 8%;"><%= @user.firstName %></b></div>
+ 
+
+ <div style=" width: 70%; margin-left: 8%;padding:1.5%; float:right; " >
+<%= post.body %>
+ <% if current_user.id==post.user_id %>
+ <div class="dropdown" style="float:right; margin-top: 0%;" > <button class="btn btn-default dropdown-toggle"type="button" id="dropdownMenu1" data-toggle="dropdown"style="background-color:transparent;border-color: transparent;">
+<span class="caret" style="color:#660033; font-weight: bold;z-index: 999999999;"></span>
+      </button>
+  <ul class="dropdown-menu" role="menu" style="float:right;">
+    <li><%=  button_to 'Destroy',post , method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')",  :style=>" background-color:transparent;border-color: transparent; color:#660033"%></li>
+    <li>  <%= link_to "edit" ,edit_post_path(post)%></li></ul></div>
+<% end %>
+ <div>
+   <br/>
+<% if post.document? %>
+  <iframe src="https://docs.google.com/viewer?url=http://localhost:3000/<%= post.document.url %>&embedded=true"
+width="200px" height="200px" >
+<p>Your browser does not support iframes.</p>
+</iframe>
+<%end  %>
+      <p style="color:#999999; font-size: 11px;float:left;" >
+     <b>Posted <%= time_ago_in_words(post.created_at) %> ago</b>
+   </p>
+ <br/>
+   <div style="float:right; margin-top: -3%;">
+	<% @post=Post.find_by_id(post.id) %>
+  <%= tweet_button(:via => "studentCircle", :text => @post.body) %></div>
+<div style="float:left;">
+  
+<h style="color:#660033">Add comments</h>
+	
+<%= form_for([@post,Comment.new])  do |f| %>
+ <%= hidden_field_tag :post_id,  @post.id %>
+  <%= hidden_field_tag :author_id,  @user.id %>
+
+  <div id="comment_field">
+
+    <%= f.text_field :body, placeholder: "Say Something..." %>
+     <%= f.submit "Comment" , style: 'background-color:#66003;' %>
+  </div>
+
+  
+<% end %>
+<div class="acolor">
+ <%= link_to_modal "view all comments" , post_comments_path(post)    %>
+</div></div></div>
+</div>
+ </div>

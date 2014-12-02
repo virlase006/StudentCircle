@@ -1,0 +1,38 @@
+<div >
+<%= notice %>
+  <div id="hello" style=" margin:1%; padding:10px; float: left; padding-top:10%; z-index: 1000;">
+   
+<% @us= User.find_by_id(@postC.user_id) %>
+   <%= image_tag @us.avatar.url, :style=>"border-radius:50%; width:70px; height:70px" %>
+ <b><%= @us.firstName %></b>
+     <p><%= @postC.body %></p>
+  <p>Posted <%= time_ago_in_words(@postC.created_at) %> ago</p>
+ 
+<h>Add comments</h>
+  
+<%= form_for([@postC,Comment.new])  do |f| %>
+ <%= hidden_field :post_id, :value =>@postC.id %>
+  <%= hidden_field :author_id,  current_user.id %>
+  <div id="comment_field">
+    <%= f.text_field :body, placeholder: "Say Something..." %>
+     <%= f.submit "Comment" %>
+  </div>
+<% end %>
+ <h> Comments</h>
+</br>
+ <% @postC.comments.each do |comment| %>
+ <% @u=User.find_by_id(comment.author_id) %>
+   <%= image_tag @u.avatar.url, :style=>"border-radius:50%; width:50px; height:50px" %>
+
+ <b><%= @u.firstName %> <%= @u.LastName %></b>
+   <p><b><%= comment.body %></b></p>
+<p> <%= time_ago_in_words(comment.created_at) %> ago</p>
+<% if current_user.id==comment.author_id %>
+  <%= link_to "delete" , comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+   <%= link_to "edit" ,edit_comment_path(comment)%>
+
+<% end %>
+  <% end %>
+  </hr>
+</div>
+  </div>

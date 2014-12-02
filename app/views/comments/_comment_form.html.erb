@@ -1,0 +1,8 @@
+
+<%= form_for([@post,Comment.new])  do |f| %>
+ <%= hidden_field_tag :post_id,  @post.id %>
+  <div id="comment_field">
+    <%= f.text_field :body, placeholder: "Say Something..." %>
+     <%= f.submit "Comment" %>
+  </div>
+<% end %>

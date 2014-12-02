@@ -1,0 +1,354 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;a
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #fff; }
+a:visited { color: #fff; }
+a:hover { color:#999999 ; background-color:transparent; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+nav#nav-container {
+    border-top:solid 1px rgb(220,220,220);
+    border-bottom:solid 1px rgb(220,220,220);
+    margin-bottom:18px;
+    line-height:40px;
+    float:right;
+   
+     color:#660033;
+}
+
+nav#links {
+    width:724px;
+    float:left;
+}
+
+nav#links ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#links ul li {
+    margin:0 12px;
+    padding:0;
+    float:left;
+    text-align:center;
+}
+
+#links ul li a {
+    display:block;
+    padding:0 12px;
+}
+
+nav#login {
+    width:auto;
+    float:right;
+     color:#660033;
+    position:relative;
+}
+nav#signUp {
+    width:auto;
+     color:#660033;
+    float:left;
+    position:relative;
+}
+
+#login p {
+    width:auto;
+    float:right;
+    color:#660033;
+    margin:0;
+    padding-left:24px;
+    cursor:pointer;
+    background-image:url('../img/open.png');
+    background-position:left;
+    background-repeat:no-repeat;
+    float:right;
+}
+#signUp p {
+  
+    width:auto;
+    
+     color:#660033;
+    margin:0;
+    padding-left:24px;
+    cursor:pointer;
+    background-image:url('../img/open.png');
+    background-position:left;
+    background-repeat:no-repeat;
+}
+
+#login p.close {
+    background-image:url('../img/close.png');
+}
+#signUp p.close {
+    background-image:url('../img/close.png');
+}
+
+#login-form {
+    position:absolute;
+    z-index:99;
+    background-color:#DADADA;
+    border:solid 1px rgb(220,220,220);
+    padding:12px;
+    width:300px;
+    box-shadow:1px 1px 4px rgb(220,220,220);
+    top:40px;
+    right:0;
+    display:none;
+}
+#signUp-form {
+    position:absolute;
+    z-index:99;
+    background-color:#DADADA;
+    border:solid 1px rgb(220,220,220);
+    padding :12px;
+    width:400px;
+    box-shadow:1px 1px 4px rgb(220,220,220);
+    top:40px;
+    right:0;
+    display:none;
+}
+
+#login-form label {
+    display:block;
+}
+#signUp-form label {
+
+   display:block;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    display:block;
+}
+#signUp-form input[type="text"],
+#signUp-form input[type="password"] {
+    
+      display:block
+    
+}
+
+#login-form input,
+#login-form label {
+    margin-bottom:4px;
+}
+#signUp-form input,
+#signUp-form label {
+     margin-bottom:12px;
+   
+
+}
+.heading{
+    width:auto;
+    float:left;
+    font-family: calibri;
+    font-size:100px;
+    font-weight: bolder;
+    color:#660033;
+
+   
+    marging-left:05%;
+    padding-left:4%;
+
+}
+.jimgMenu {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	margin: 25px 0px 0px;
+}
+
+.jimgMenu ul {
+	list-style: none;
+	margin: 0px;
+	display: block;
+	height: 200px;
+	width: 100%;
+
+	}
+
+.jimgMenu ul li {
+	float: left;
+}
+
+.jimgMenu ul li a {
+	text-indent: -1000px;
+	background:#FFFFFF none repeat scroll 0%;
+	border-right: 2px solid #fff;
+	cursor:pointer;
+	display:block;
+	overflow:hidden;
+	width:78px;
+	height: 200px;
+}
+
+.jimgMenu ul li.landscapes a {
+	background: url(landscapes.jpg) repeat scroll 0%;
+}
+.jimgMenu ul li.listItems a {
+	background: url(landscapes.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.people a {
+	background: url(people.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.nature a {
+	background: url(nature.jpg) repeat scroll 0%;
+}
+.jimgMenu ul li.abstract a {
+	background: url(abstract.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.urban a {
+	background: url(urban.jpg) repeat scroll 0%;
+	
+
+}
+#slidediv {
+color:#660033;
+background-color:#EFEFEF;
+border:2px solid #660033;
+display:none;
+text-align:justify;
+}
+#slidediv p {
+margin: 15px;
+font-size: 0.917em;
+}
+#slidediv2 {
+color:#660033;
+width:100%;
+background-color:#EEEEEE;
+border:2px solid #660033;
+display:none;
+
+}
+#slidediv2 p {
+margin: 15px;
+font-size: 0.917em;
+}
+#slidediv3 {
+color:#660033;
+width:100%;
+background-color:#EEEEEE;
+border:2px solid #660033;
+display:none;
+text-align:center;
+margin:1%;
+}
+#slidediv3 p {
+margin: 15px;
+font-size: 0.917em;
+}
+#contentdiv {
+clear: both;
+margin: 0 auto;
+max-width: 534px;
+}
+#btnright{
+ background:url(signIn.jpg);
+width:70px;
+height:70px;
+border-radius:50%;
+}
+#btnright2{
+ background:url(about.jpg);
+width:70px;
+height:70px;
+border-radius:50%;
+background-position:center;
+}
+#btnright3{
+ background:url(about.jpg);
+width:70px;
+height:70px;
+border-radius:50%;
+background-position:center;
+}
+#imgbutton{
+     background:url(about.jpg);
+width:70px;
+height:70px;
+border-radius:50%;
+background-position:center;
+
+
+}
+#panel,#flip
+{
+padding:5px;
+text-align:center;
+
+
+}
+#flip
+
+{
+
+    float:right;
+font-weight:bolder;
+color:#eeeeee;
+margin-top: -.5%;
+
+}
+#panel
+{
+padding:50px;
+margin-left:-3%;
+margin-right:0%;
+width:110%;
+display:none;
+
+
+}

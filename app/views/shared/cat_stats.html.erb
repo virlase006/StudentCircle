@@ -1,0 +1,18 @@
+<div class="stats">
+  <table >
+    <tr>
+      <td>
+         <span >
+           <h> <%= @category.name%> : </h>
+          </span>
+      </td>
+      
+      <td>
+           <span id="followers" class="stat" style="color:#666666">
+            <%= pluralize(@category.posts.count, "Posts") %>
+          </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>

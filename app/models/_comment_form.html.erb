@@ -1,0 +1,7 @@
+<%= form_for [@post, @comment] do |f| %>  
+   <%= f.hidden_field :post_id, :value => @post.id %>
+   <div class="field">
+     <%= f.text_area :body, placeholder: "Compose your comment..." %>
+   </div>
+   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

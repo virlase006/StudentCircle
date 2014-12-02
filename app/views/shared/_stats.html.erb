@@ -1,0 +1,24 @@
+<% @user = @user || current_user %>
+<div class="stats" style="padding: 5%">
+  <table summary="User stats" >
+   
+      <tr style="border-color: #999999;border-style: solid; ">
+
+            <span id="following" class="stat">
+              <% fu=@user.following.count %>
+              <% followingUsers= fu.to_s+ " following" %>
+              <%=  link_to followingUsers , following_user_path(@user)%>
+          </span>
+        </a><br/>
+      </tr>
+      <tr style="border-color: #999999;border-style: solid; ">
+           <span id="followers" class="stat" >
+              <% fu=@user.followers.count %>
+              <% followingUsers= fu.to_s+ " followers" %>
+              <%=  link_to followingUsers , followers_user_path(@user)%>
+          </span>
+        </a>
+      </tr>
+   
+  </table>
+</div>

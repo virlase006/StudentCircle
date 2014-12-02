@@ -1,0 +1,18 @@
+<div class="stats">
+  <table >
+    <tr>
+      <td>
+         <span >
+           <h> <%= current_user.firstName %> <%= current_user.LastName %> : </h>
+          </span>
+      </td>
+      
+      <td>
+           <span id="followers" class="stat" style="color:#666666">
+            <%= pluralize(current_user.posts.count, "Posts") %>
+          </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>

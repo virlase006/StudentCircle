@@ -1,0 +1,50 @@
+<div class="a" style="width:20%;  position:fixed; float:left; top:10% ; padding-left:1.2%;"  >
+  <div class="a1" style="width:100% ; " >
+   <%= image_tag current_user.avatar.url, :style=>"border-radius:50%; width:100px; height:100px" %>
+
+<b style="color:#660033"> <%= current_user.firstName %>  <%= current_user.LastName %></b></br>
+  </div> 
+  <div class="bb1" style="width: 100%;">
+    
+    <b style="color:#660033">Last Login:</b>
+    <b style="color:#666666"><%= time_ago_in_words(current_user.last_sign_in_at) %> ago </b></br><hr>
+
+
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="color:#660033; font-weight: bold;">
+        Choose Category
+        <span class="caret" style="color:#660033; font-weight: bold;z-index: 999999999;"></span>
+      </button>
+
+
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="color:#660033; font-weight: bold; z-index: 999999999;">
+        <% @cats.each do |cat| %>
+
+          <li style="color:#660033; font-weight: bold;" ><%= link_to cat.name , category_path(cat) ,:method  => :get %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <hr style="">
+    <b style="color:#660033"><%= render :partial => "shared/userInfo" %></b></br> <hr color="black">
+
+    <b style="color:#660033"><%= render :partial => "shared/stats" %></b>
+  </div>
+</div>
+<div class="bb" style="width:80%; height: auto;float: none;position:absolute; top:10%; left:20%; float: right; padding-bottom: 3%;">
+  <div class="a2" style="width:100%;">
+
+    <%= render :partial => "posts/post_form" %>
+
+
+  </div>
+
+  <div class="bb2" style="width:100%; height:auto;">
+
+    <% @feed_items.each do |post| %>
+      <%= render :partial=> "posts/post" , :locals => { :post => post} %>
+
+    <% end %>
+     <%= paginate @feed_items %> 
+  </div>
+</div>

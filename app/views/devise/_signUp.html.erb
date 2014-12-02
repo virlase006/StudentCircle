@@ -1,0 +1,55 @@
+<div class="container" style=" float:none; width:110%; margin-top: 32%; margin-left: 0%">
+ 
+  <div class="row centered-form" style="width:90%">
+
+     
+      <div class="panel panel-default" >
+        <div class="panel-heading" >
+          <h3 class="panel-title" "><b>Sign Up Here</b> <small>It's free!</small></h3>
+        </div>
+        <div class="panel-body" >
+          <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+            <div class="row" >
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <%= f.text_field :firstName, autocomplete: "off", :placeholder=>" First Name " , :style=>"width:100%;"%>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <%= f.text_field :LastName, autocomplete: "off", :placeholder=>" Last Name " , :style=>"width:100%;"%>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.email_field :Email, autocomplete: "off", :placeholder=>" Email ", :style=>"width:100%;" %>
+            </div>
+
+            
+            
+                <div class="form-group">
+                  <%= f.password_field :password, autocomplete: "off" , :placeholder=>" Password ", :style=>"width:100%;" %>
+                </div>
+             
+              
+                <div class="form-group">
+                  <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder=>" Password Confirmation ", :style=>"width:100%;" %>
+                </div>
+             
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <%= f.file_field :avatar , :placeholder=>"Choose Profile Picture" ,:style=> "float:left;"%>
+                </div>
+              </div>
+            
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <%= f.submit "Sign up",:class=>"btn btn-info btn-block", :style=>"width:50%; margin-left:60%"  %>
+        </div></div>
+</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+ 

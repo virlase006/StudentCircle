@@ -1,0 +1,5 @@
+<% file_attachment=FileAttachment.new %>
+<%= form_for @file_attachment do |f| %>
+<%= f.file_field :file %>
+<%= f.submit  "Upload"%>
+<% end %>

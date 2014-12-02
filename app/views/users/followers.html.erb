@@ -1,0 +1,7 @@
+<section class="midBody" style="top:10%; position:absolute; color: #660033; font-weight: bold;margin-left:20%; ">
+<% for user in @users%>
+  <%= image_tag user.avatar.url,:style=>"border-radius:50%; width:230px; height:230px;position: relative;
+z-index: 1;border-radius:50%; width:100px; height:100px"%>
+<%= user.firstName %><br/><hr/>
+<% end %>
+  </section>
